@@ -1,23 +1,27 @@
-num1 = float(input("Enter first number"))
-num2 = float(input("Enter second number"))
+# Match case operator
+# prompting the users
 
-operation = input("Choose the operation (+, -, *, /):")
+num1 = float(input("Enter the first number:"))
+num2 = float(input("Enter the second number:"))
+operation  = input("Choose the operation (+, -, *, /):"))
+
+#match case 
 
 match operation:
     case "+":
-        result= num1+num2
+        result = num1+num2
         print(f"The result is {result}")
     case "-":
-        result = num1-num2
+        result = num1 - num2
         print(f"The result is {result}")
     case "/":
         if num2 !=0:
-         result = num1/num2
-         print(f"The result is {result}")
+            result = num1 / num2
+            print(f"The result is {result}")
         else:
-            print("Cannot divide by zero")
+            print("Error: Division by zero is not allowed.")
     case "*":
         result = num1*num2
-        print(f"The result is {result}")
-    case _:
-        print("Invalid operation")
+        print((f"The result is {result}")
+
+      
