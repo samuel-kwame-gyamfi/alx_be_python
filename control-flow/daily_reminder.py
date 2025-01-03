@@ -1,22 +1,32 @@
-task = input("Enter task description: ")
-task_priority = input("What is the priority of the task (High, Medium, Low): ").capitalize()
-time_bound = input("Is the task time bound (Yes or No): ").strip().lower()
+ #daily_reminder.py
 
-match task_priority:
-    case "High":
-        message = "It's a high priority task."
-    case "Medium":
-        message = "It's a medium priority task."
-    case "Low":
-        message = "It's a low priority task."
+# Step 1: Ask user for task description
+task = input("Enter your task: ")
+
+# Step 2: Ask user for priority level
+priority = input("Priority (high/medium/low): ").lower()
+
+# Step 3: Ask if the task is time-bound
+time_bound = input("Is it time-bound? (yes/no): ").lower()
+
+# Step 4: Process task and provide reminder based on priority and time sensitivity
+
+# Use match-case for priority
+match priority:
+    case 'high':
+        priority_message = "high priority task"
+    case 'medium':
+        priority_message = "medium priority task"
+    case 'low':
+        priority_message = "low priority task"
     case _:
-        message = "Invalid priority specified."
+        priority_message = "unknown priority level"
 
-print(message)
-
+# If the task is time-bound, modify the reminder message
 if time_bound == "yes":
-    print(f"{task} is of {task_priority} priority and is time-bound.")
-elif time_bound == "no":
-    print(f"Note: {task} is of {task_priority} priority and is not time-bound.")
+    reminder = f"Reminder: '{task}' is a {priority_message} that requires immediate attention today!"
 else:
-    print("Invalid input for time-bound status.")
+    reminder = f"Note: '{task}' is a {priority_message}. Consider completing it when you have free time."
+
+# Step 5: Output the reminder message
+print(f"Reminder: {reminder}")  # This is the line that should be checke
