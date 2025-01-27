@@ -9,6 +9,7 @@ def main():
     numerator = sys.argv[1]
     denominator = sys.argv[2]
 
+    # Call the safe_divide function
     result = safe_divide(numerator, denominator)
     print(result)
 
