@@ -31,29 +31,41 @@ class BankAccount:
         """Display the current account balance."""
         print(f"Current balance: ${self.__account_balance:.2f}")
 
-# Example usage:
+
+# Example usage with tests:
 if __name__ == "__main__":
     # Create a bank account with an initial balance of $100
     account = BankAccount(100)
 
-    # Display the initial balance
+    # 1. Test display_balance method
+    print("Test 1: Display initial balance (Expected: $100.00)")
     account.display_balance()
+    print()
 
-    # Deposit $50
+    # 2. Test deposit method
+    print("Test 2: Deposit $50 (Expected: Current balance: $150.00)")
     account.deposit(50)
     account.display_balance()
+    print()
 
-    # Withdraw $30
+    # 3. Test withdraw method (successful withdrawal)
+    print("Test 3: Withdraw $30 (Expected: Withdrawal successful. Current balance: $120.00)")
     if account.withdraw(30):
         print("Withdrawal successful.")
     else:
         print("Withdrawal failed.")
     account.display_balance()
+    print()
 
-    # Attempt to withdraw $200 (should fail)
+    # 4. Test withdraw method (withdraw more than balance)
+    print("Test 4: Attempt to withdraw $200 (Expected: Withdrawal failed. Insufficient funds.)")
     if account.withdraw(200):
         print("Withdrawal successful.")
     else:
         print("Withdrawal failed.")
     account.display_balance()
- 
+    print()
+
+    # 5. Test display_balance again
+    print("Test 5: Display balance (Expected: $120.00)")
+    account.display_balance()
